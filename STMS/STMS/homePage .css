@@ -1,0 +1,349 @@
+:root {
+    --white-color: #fff;
+    --paraText-color: #777;
+    --heading-color: #333;
+    --primary-color: rgb(31, 153, 167);
+    --secondary-color: rgb(94, 7, 40);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content-wrapper p {
+    font-size: 20px; 
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('images/image.jpg');
+    background-color: #d6d6d6;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center center; 
+    background-attachment: fixed; 
+}
+
+.container {
+    position: relative; 
+    display: flex;
+    justify-content: center; 
+    align-items: start; 
+    height: 100vh; 
+    padding-top: 40px; 
+   
+}
+
+
+.animated-text {
+    text-align: center;
+    font-family: GtSectra_Medium, Georgia, serif;
+    font-style: normal;
+    position: relative;
+    font-size: 8.6vw;
+    line-height: 0.9em;
+    z-index: 10;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    color: black; 
+    width: 100%; 
+}
+
+.animated-text {
+    opacity: 1; 
+    transition: opacity 1s ease-in-out;
+}
+.animated-text.active {
+    opacity: 1; 
+}
+
+.highlight {
+    color: var(--primary-color); 
+}
+
+.animated-text.horizon {
+    opacity: 0; 
+    transition: opacity 20s ease-in-out;
+   
+}
+.animated-text.horizon.active {
+    opacity: 1;
+}
+
+
+.headline {
+    font-size: 5em;
+    text-align: center;
+    color: #fff;
+    margin-top: 100px;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    padding: 20px;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+}
+
+.content-wrapper p {
+    font-family: "leitura-news", serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 50px; 
+}
+
+
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1500;
+    cursor: pointer;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 3000; 
+    position: fixed; 
+    top: 20px;
+    left: 20px; 
+}
+
+.hamburger .line {
+    background-color: var(--primary-color);
+    height: 3px;
+    width: 100%;
+}
+
+.side-nav {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 0; 
+    height: 100%; 
+    background-color: var(--paraText-color); 
+    overflow-x: hidden; 
+    transition: 0.5s;
+    z-index: 2001; 
+    font-size: 36px;
+    color: var(--white-color);
+    cursor: pointer;
+    padding-top: 80px; 
+}
+
+
+
+.side-nav a {
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--white-color);
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.nav-logo {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 80px;
+    margin-bottom: 30px;
+}
+
+.side-nav.open .nav-logo {
+    display: block;
+    width: 250px; 
+}
+
+.side-nav a:hover {
+    background-color: var(--primary-color); 
+    color: var(--white-color); 
+}
+
+
+
+
+
+@keyframes flash {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.flash {
+    animation: flash 2s infinite alternate; 
+}
+
+.testimonial-container {
+    display: flex;
+    align-items: flex-start;
+    background-color: white; 
+    padding: 20px;
+}
+
+.testimonial-main {
+    display: flex;
+    align-items: center; 
+}
+.image-gallery {
+    flex-basis: 30%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 20px; 
+    border-radius: 50%;
+   
+   
+}
+
+.gallery-img {
+    width: 60px; 
+    height: auto;
+    margin-bottom: 10px; 
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out; 
+    border: 3px solid var(--primary-color);
+    
+}
+.image-gallery img {
+    cursor: pointer; 
+    transition: transform 0.2s; 
+    margin: 10px;
+    
+    
+   
+}
+
+.image-gallery img:hover {
+    transform: scale(1.1); 
+}
+
+.testimonial-section {
+    background-color: #f0f0f0; 
+    padding: 20px;
+    text-align: center;
+}
+
+.gallery-img:hover {
+    transform: scale(1.1); }
+
+.testimonial-text {
+    font-size: 24px; 
+    color: var(--primary-color); 
+    font-style: italic;
+    padding-left: 20px; 
+    margin: 30px 0; 
+    text-align: left; 
+    quotes: "“" "”" "‘" "’";
+}
+
+
+.testimonial-text:before {
+    content: open-quote;
+    font-size: 60px; 
+    line-height: 0.1em; 
+    vertical-align: -0.4em; 
+    color: var(--primary-color);
+}
+
+.testimonial-text:after {
+    content: close-quote;
+    font-size: 60px; 
+    line-height: 0.1em;
+    vertical-align: -0.4em;
+    color: var(--primary-color);
+}
+
+.testimonial-wrapper {
+    display: flex;
+    align-items: center; 
+    margin: 20px 0; 
+}
+
+.testimonial-image {
+    width: 50%; 
+    max-width: 200px; 
+    height: auto;
+    margin-right: 60px;
+    border-radius: 15px; 
+    border: 3px solid white
+
+    
+}
+
+.testimonial-text-block {
+    background-color: #f0f0f0; 
+    padding: 30px;
+    width: 30%; 
+    text-align: left; 
+}
+
+
+.gallery-img:hover {
+    opacity: 1; 
+    transform: scale(1.1); 
+}
+
+
+@media (max-width: 768px) {
+    .image-gallery {
+        flex-direction: column;
+    }
+
+    .testimonial-section {
+        padding: 10px;
+    }
+
+    .testimonial-text {
+        font-size: 18px;
+    }
+}
+
+
+.scroll-down-arrow {
+    position: fixed;
+    bottom: 0px; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 90px; 
+    color: var(--primary-color); 
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    z-index: 1000;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-20px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
